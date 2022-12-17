@@ -11,15 +11,12 @@ import RepoName from '../components/RepoName'
 
 // Initializing octokit object with authentication token generated from github.
 const octokit = new Octokit({
-  auth : process.env.REACT_APP_TOKEN2
+  auth : process.env.REACT_APP_TOKEN1
 })
 
 // const queryString =  "repo:Hashnode/merns-starter is:issue "
 
 const pp = 20; // per_page limit;
-
-
-
 
 
 const IssuePage = (props) => {
@@ -79,6 +76,7 @@ const IssuePage = (props) => {
     const submitHandler = (username, repo) =>{
       const str = 'repo:'+ username + '/' + repo + ' is:issue'
       // console.log(str);
+      setCurrentPage(1);      
       setQueryString(str);
       setUserDetails({userName: username, repoName: repo});
     }

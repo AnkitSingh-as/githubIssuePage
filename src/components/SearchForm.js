@@ -6,7 +6,7 @@ const SearchForm = (props) => {
     const formSubmitHandler = (event ) => {
         event.preventDefault();
         const {Username, Repository} = event.target;
-        console.log(Username.value, Repository.value);
+        // console.log(Username.value, Repository.value);
 
         props.onSubmit(Username.value.trim(), Repository.value.trim());
     }
